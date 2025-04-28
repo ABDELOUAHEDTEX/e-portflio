@@ -1,28 +1,89 @@
 import React from 'react';
+import { aboutMe, careerGoal, personalInfo, education } from '../data/portfolioData';
 
-const About = () => {
+const About: React.FC = () => {
   return (
-    <section id="about" className="py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
+    <section id="about" className="py-16 lg:py-24 bg-[#0f172a]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white">
+            About <span className="text-[#00F7FF]">Me</span>
+          </h2>
+          <div className="mt-2 h-1 w-20 bg-gradient-to-r from-[#00F7FF] to-[#1E3A8A] mx-auto"></div>
+        </div>
         
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          <div className="md:w-2/3">
-            <p className="text-lg mb-4">
-              I'm a motivated software engineering student at the National School of Computer Science and Systems Analysis (Rabat, Morocco) with a strong foundation in web development (Angular, Node.js, Laravel), mobile development (Android, Java), and AI (Python, TensorFlow). I'm passionate about creating innovative solutions and collaborating on impactful projects.
-            </p>
-            <p className="text-lg">
-              My goal is to join a dynamic tech team where I can contribute to cutting-edge projects in full-stack development and AI, while continuously growing my expertise as a software engineer.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="space-y-6">
+            <div className="bg-[#1e293b] rounded-xl p-6 shadow-lg transform transition-transform hover:scale-[1.02] duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Professional Profile</h3>
+              <p className="text-gray-300 leading-relaxed">
+                {aboutMe}
+              </p>
+            </div>
+            
+            <div className="bg-[#1e293b] rounded-xl p-6 shadow-lg transform transition-transform hover:scale-[1.02] duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Career Goal</h3>
+              <p className="text-gray-300 leading-relaxed">
+                {careerGoal}
+              </p>
+            </div>
+            
+            <div className="bg-[#1e293b] rounded-xl p-6 shadow-lg transform transition-transform hover:scale-[1.02] duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Personal Interests</h3>
+              <p className="text-gray-300 leading-relaxed">
+                {personalInfo.interests}
+              </p>
+            </div>
           </div>
           
-          <div className="md:w-1/3 flex justify-center">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-darkBlue">
-              <img 
-                src="public\abdlwahed.jpeg" 
-                alt="Abdelouahed Akabbab" 
-                className="w-full h-full object-cover"
-              />
+          <div className="space-y-6">
+            <div className="bg-[#1e293b] rounded-xl p-6 shadow-lg transform transition-transform hover:scale-[1.02] duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Education</h3>
+              <div className="space-y-4">
+                {education.map((edu, index) => (
+                  <div key={index} className="relative pl-6 pb-4 border-l-2 border-[#00F7FF]">
+                    <div className="absolute top-0 left-[-8px] w-4 h-4 rounded-full bg-[#00F7FF]"></div>
+                    <h4 className="text-white font-medium">{edu.institution}</h4>
+                    <p className="text-[#00F7FF]">{edu.degree}</p>
+                    <p className="text-gray-400 text-sm">{edu.period}</p>
+                    {edu.current && (
+                      <span className="inline-block mt-1 px-2 py-1 bg-[#00F7FF]/20 text-[#00F7FF] text-xs rounded-full">
+                        Current
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-[#1e293b] rounded-xl p-6 shadow-lg transform transition-transform hover:scale-[1.02] duration-300">
+              <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
+              <div className="space-y-3 text-gray-300">
+                <p><span className="text-[#00F7FF]">Email:</span> {personalInfo.email}</p>
+                <p><span className="text-[#00F7FF]">Phone:</span> {personalInfo.phone}</p>
+                <p>
+                  <span className="text-[#00F7FF]">LinkedIn:</span>{' '}
+                  <a 
+                    href={`https://${personalInfo.linkedin}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    {personalInfo.linkedin}
+                  </a>
+                </p>
+                <p>
+                  <span className="text-[#00F7FF]">GitHub:</span>{' '}
+                  <a 
+                    href={`https://${personalInfo.github}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors duration-200"
+                  >
+                    {personalInfo.github}
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

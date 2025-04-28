@@ -1,63 +1,69 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { personalInfo } from '../data/portfolioData';
+import { Code, Github, Linkedin, Mail } from 'lucide-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
-    <footer className="py-10 bg-gradient-to-b from-black to-darkBlue/60 border-t border-neonCyan/20">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center">
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-gradient mb-2 animate-float">Abdelouahed Akabbab</h3>
-            <p className="mb-6 text-gray-400 max-w-md mx-auto">
-              Football enthusiast and aspiring content creator exploring tech trends and building the digital future.
-            </p>
-          </div>
-          
-          <div className="flex justify-center space-x-8 mb-8">
-            <a 
-              href="https://github.com/AAbdelouahed" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-darkBlue to-neonCyan p-0.5 animate-glow">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <Github size={24} className="text-white" />
-                </div>
-              </div>
-            </a>
-            
-            <a 
-              href="https://www.linkedin.com/in/abdelouahed-akabbab" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-darkBlue to-neonCyan p-0.5 animate-glow">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <Linkedin size={24} className="text-white" />
-                </div>
-              </div>
-            </a>
-            
-            <a 
-              href="mailto:akabbababdelouahed@gmail.com"
-              className="transform transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-darkBlue to-neonCyan p-0.5 animate-glow">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center">
-                  <Mail size={24} className="text-white" />
-                </div>
-              </div>
-            </a>
-          </div>
-          
-          <div className="pt-6 border-t border-gray-800/30">
-            <div className="text-sm text-gray-500 flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
-              <p>&copy; {new Date().getFullYear()} Abdelouahed Akabbab. All rights reserved.</p>
-              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-neonCyan animate-pulse"></div>
-              <p>Building the future, one line of code at a time</p>
+    <footer className="bg-[#0f172a] border-t border-[#1e293b]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div className="flex items-center">
+              <Code className="h-8 w-8 text-[#00F7FF]" />
+              <span className="ml-2 text-white font-bold text-xl">ABDELOUAHED</span>
             </div>
+            <p className="mt-3 text-gray-300 max-w-md">
+              A motivated software engineering student with a passion for creating innovative solutions and exploring new technologies.
+            </p>
+            <div className="mt-4 flex space-x-4">
+              <a
+                href={`https://${personalInfo.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00F7FF] transition-colors duration-200"
+              >
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href={`https://${personalInfo.linkedin}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00F7FF] transition-colors duration-200"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="text-gray-300 hover:text-[#00F7FF] transition-colors duration-200"
+              >
+                <Mail className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a 
+                    href={`#${item.toLowerCase()}`} 
+                    className="text-gray-300 hover:text-[#00F7FF] transition-colors duration-200"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-semibold text-lg mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-300">
+              <li>Rabat, Morocco</li>
+              <li>{personalInfo.email}</li>
+              <li>{personalInfo.phone}</li>
+            </ul>
           </div>
         </div>
       </div>
