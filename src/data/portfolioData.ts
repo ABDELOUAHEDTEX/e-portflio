@@ -6,7 +6,7 @@ export const personalInfo = {
   phone: "+212 777 928 718",
   linkedin: "linkedin.com/in/abdelouahed-akabbab-8358a2299",
   github: "github.com/ABDELOUAHEDTEX",
-  interests: "Football enthusiast and aspiring content creator exploring tech trends"
+  interests: "Football | Coffee | my wife "
 };
 
 export const aboutMe = `
