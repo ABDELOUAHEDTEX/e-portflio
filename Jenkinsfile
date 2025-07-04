@@ -1,4 +1,4 @@
-pipeline(
+pipeline{
     agent : any
     environment {
         IMAGE_NAME="eportfolio"
@@ -41,4 +41,4 @@ pipeline(
         }
     }
 
-)
+}
