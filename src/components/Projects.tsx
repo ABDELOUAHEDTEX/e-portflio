@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://github.com/AAbdelouahed"
+            href="https://github.com/ABDELOUAHEDTEX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 border border-[#00F7FF] text-[#00F7FF] rounded-md hover:bg-[#00F7FF]/10 transition-colors duration-300"
