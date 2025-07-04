@@ -19,7 +19,7 @@ To join a dynamic tech team to contribute to cutting-edge projects in full-stack
 
 export const education = [
   {
-    institution: "National School of Computer Science and Systems Analysis",
+    institution: "National School of Computer Science and Systems Analysis ENSIAS ",
     degree: "Software Engineering",
     period: "Sep 2023 - Present",
     current: true
@@ -51,10 +51,31 @@ export const experience = [
 export const technicalSkills = [
   { category: "Languages", skills: ["JavaScript", "Python", "Java", "PHP", "SQL", "C", "C++", "HTML/CSS"] },
   { category: "Frameworks", skills: ["Angular", "Node.js", "Laravel", "TensorFlow/PyTorch"] },
-  { category: "Tools", skills: ["Git", "Docker", "MySQL", "Android Studio", "Oracle Apex"] }
+  { 
+    category: "Tools", 
+    skills: [
+      "Git", 
+      "Docker", 
+      "Jenkins",       // CI/CD
+      "Kubernetes",    // Orchestration containers
+      "Ansible",       // Configuration management
+      "Terraform",     // Infrastructure as Code
+      "Prometheus",    // Monitoring
+      "Grafana",       // Visualization
+      "MySQL", 
+      "Android Studio", 
+      "Oracle Apex"
+    ] 
+  }
 ];
 
-export const specializations = ["Full Stack Development", "Mobile Development (Android)", "AI"];
+export const specializations = [
+  "Full Stack Development", 
+  "Mobile Development (Android)", 
+  "Artificial Intelligence", 
+  "DevOps Engineering"
+];
+
 
 export const projects = [
   {
